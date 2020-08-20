@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Dictionary</h2>
+<br><br><br>
+<input type="text" id="name1" >
+<select name="change" id="chon">
+    <option value="english" value="english">english</option>
+    <option value="vietnames" value="vietnemes">vietnames</option>
+</select>
+<input type="text" id="name2">
+<button type="button" onclick="Translate()">Translate</button>
+<script>
+    let listEnglish = ['cat','dog','fish','pig','chicken','cow','flower','water'];
+    let listVietnames = ["mèo","chó","cá","lợn","gà","bò","hoa","nước"];
+
+    function Translate() {
+        let b = document.getElementById("name1").value;
+        let c= document.getElementById("chon").value;
+
+            if (c== "english") {
+                if (listEnglish.indexOf(b) !== -1 ) {
+                    document.getElementById("name2").value= listVietnames[listEnglish.indexOf(b)];
+                }else
+                    alert("khong tim thay tu cua ban");
+            }else if (c=="vietnames") {
+                if (listVietnames.indexOf(b) !== -1 ) {
+                    document.getElementById("name2").value = listEnglish[listVietnames.indexOf(b)];
+                }else
+                    alert("khong tim thay tu cua ban");
+            }
+
+
+
+    }
+</script>
+
+</body>
+</html>
